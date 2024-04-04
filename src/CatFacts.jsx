@@ -1,7 +1,7 @@
 import axios from 'axios';
 import CatLogo from './assets/cat.svg'
 import './CatFacts.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Jiaxuan Li
 
@@ -11,6 +11,8 @@ function CatFacts() {
     // you may need to add other code elsewhere!
 
     function generateCatFact() {
+        setCatFacts('Loading...');
+
         axios.get('https://catfact.ninja/fact')
             .then(response => {
                 // insert code here
@@ -18,6 +20,11 @@ function CatFacts() {
                 setCatFacts(response.data.fact);
             })
     }
+
+    // When the page loads, call the generateCatFact once
+    useEffect(() => {
+        generateCatFact();
+    }, []);
 
 
 

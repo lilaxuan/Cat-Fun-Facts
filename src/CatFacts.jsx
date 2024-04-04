@@ -8,16 +8,6 @@ import { useState, useEffect } from 'react';
 function CatFacts() {
     const [catFacts, setCatFacts] = useState('');
 
-    // Using promise
-    // function generateCatFact() {
-    //     setCatFacts('Loading...');
-
-    //     axios.get('https://catfact.ninja/fact')
-    //         .then(response => {
-    //             setCatFacts(response.data.fact);
-    //         })
-    // }
-
     // Using async && await
     const generateCatFact = async () => {
         setCatFacts('Loading...');

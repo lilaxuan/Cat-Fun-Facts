@@ -8,15 +8,11 @@ import { useState, useEffect } from 'react';
 function CatFacts() {
     const [catFacts, setCatFacts] = useState('');
 
-    // you may need to add other code elsewhere!
-
     function generateCatFact() {
         setCatFacts('Loading...');
 
         axios.get('https://catfact.ninja/fact')
             .then(response => {
-                // insert code here
-                console.log(response.data.fact);
                 setCatFacts(response.data.fact);
             })
     }
@@ -31,8 +27,6 @@ function CatFacts() {
     return (
         <div className="App">
             <div className='catFactsText'>
-                {/* {"Loading..."} */}
-                {/* The cat fact should be displayed here*/}
                 {catFacts}
             </div>
             <div>
